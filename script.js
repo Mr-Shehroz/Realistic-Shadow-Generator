@@ -108,27 +108,22 @@ class ShadowGenerator {
             const fg = this.foregroundImg;
             this.canvas.width = bg.width;
             this.canvas.height = bg.height;
-            // Draw background
             this.ctx.drawImage(bg, 0, 0, this.canvas.width, this.canvas.height);
-            // Calculate shadow parameters
             const angleRad = (this.lightAngle * Math.PI) / 180;
             const elevRad = (this.lightElevation * Math.PI) / 180;
             const shadowOffsetX = Math.cos(angleRad) * (90 - this.lightElevation) * 2;
             const shadowOffsetY = Math.sin(angleRad) * (90 - this.lightElevation) * 2;
-            // Scale foreground to fit canvas
             const scale = Math.min(this.canvas.width / fg.width, this.canvas.height / fg.height) * 0.6;
             const fgWidth = fg.width * scale;
             const fgHeight = fg.height * scale;
             const fgX = (this.canvas.width - fgWidth) / 2;
             const fgY = this.canvas.height - fgHeight - 50;
-            // Create offscreen canvas for foreground silhouette
             const fgCanvas = document.createElement('canvas');
             fgCanvas.width = fgWidth;
             fgCanvas.height = fgHeight;
             const fgCtx = fgCanvas.getContext('2d', { willReadFrequently: true });
             fgCtx.drawImage(fg, 0, 0, fgWidth, fgHeight);
             const fgData = fgCtx.getImageData(0, 0, fgWidth, fgHeight);
-            // Generate shadow layers with varying blur and opacity
             const shadowLayers = 5;
             for (let layer = shadowLayers - 1; layer >= 0; layer--) {
                 const layerCanvas = document.createElement('canvas');
@@ -136,7 +131,6 @@ class ShadowGenerator {
                 layerCanvas.height = fgHeight;
                 const layerCtx = layerCanvas.getContext('2d');
                 const layerData = layerCtx.createImageData(fgWidth, fgHeight);
-                // Create shadow silhouette for this layer
                 for (let i = 0; i < fgData.data.length; i += 4) {
                     const alpha = fgData.data[i + 3];
                     if (alpha > 10) {
@@ -156,7 +150,6 @@ class ShadowGenerator {
                     }
                 }
                 layerCtx.putImageData(layerData, 0, 0);
-                // Apply depth map warping if available
                 if (this.depthMapImg) {
                     const depthCanvas = document.createElement('canvas');
                     depthCanvas.width = this.canvas.width;
@@ -189,7 +182,6 @@ class ShadowGenerator {
                     layerCtxFinal.clearRect(0, 0, fgWidth, fgHeight);
                     layerCtxFinal.drawImage(warpedCanvas, 0, 0);
                 }
-                // Apply blur based on layer
                 const blurAmount = layer * 3 + 2;
                 this.ctx.filter = `blur(${blurAmount}px)`;
                 const layerOffsetX = fgX + shadowOffsetX + layer * shadowOffsetX * 0.2;
@@ -197,7 +189,6 @@ class ShadowGenerator {
                 this.ctx.drawImage(layerCanvas, layerOffsetX, layerOffsetY);
                 this.ctx.filter = 'none';
             }
-            // Draw foreground on top
             this.ctx.drawImage(fg, fgX, fgY, fgWidth, fgHeight);
             document.getElementById('processing').style.display = 'none';
         }, 100);
@@ -209,5 +200,4 @@ class ShadowGenerator {
         link.click();
     }
 }
-// Initialize the application
 new ShadowGenerator();
