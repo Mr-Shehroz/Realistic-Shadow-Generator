@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Realistic Shadow Generator</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="container">
@@ -97,22 +97,26 @@
         <div class="canvas-container">
           <canvas id="canvas"></canvas>
           <div id="placeholder" class="placeholder">
-
+            Upload foreground and background to see result
           </div>
           <div id="processing" class="processing" style="display: none">
             Processing...
           </div>
         </div>
-      </div>  
+
+        <!-- NEW: CSS Output -->
+        <div class="css-output" style="margin-top: 1.5rem; display: none;">
+          <h4>CSS Shadow Code (for transparent PNGs):</h4>
+          <pre id="cssCode" class="css-code"></pre>
+        </div>
+      </div>
 
       <div class="features">
         <h3>✅ Features Implemented:</h3>
         <ul>
-          <li>✓ Directional light control (angle 0-360°, elevation 0-90°)</li>
+          <li>✓ Directional light control (angle 0–360°, elevation 0–90°)</li>
           <li>✓ Contact shadow (dark and sharp near contact area)</li>
-          <li>
-            ✓ Soft shadow falloff (blur and opacity increase with distance)
-          </li>
+          <li>✓ Soft shadow falloff (blur and opacity increase with distance)</li>
           <li>✓ Shadow matches subject silhouette perfectly</li>
           <li>⭐ Bonus: Depth map support for realistic surface warping</li>
         </ul>

@@ -1,206 +1,226 @@
- * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e1b4b 0%, #7c3aed 50%, #1e1b4b 100%);
-      min-height: 100vh;
-      padding: 2rem;
-      color: white;
-    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e1b4b 0%, #7c3aed 50%, #1e1b4b 100%);
+  min-height: 100vh;
+  padding: 2rem;
+  color: white;
+}
 
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-    }
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
 
-    .subtitle {
-      text-align: center;
-      color: #e9d5ff;
-      margin-bottom: 2rem;
-    }
+.subtitle {
+  text-align: center;
+  color: #e9d5ff;
+  margin-bottom: 2rem;
+}
 
-    .upload-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
+.upload-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
 
-    .upload-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+.upload-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-    .upload-card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+.upload-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-    .file-input {
-      width: 100%;
-      padding: 0.75rem;
-      background: rgba(139, 92, 246, 0.3);
-      border: 2px dashed rgba(255, 255, 255, 0.3);
-      border-radius: 0.5rem;
-      color: white;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
+.file-input {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(139, 92, 246, 0.3);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-    .file-input:hover {
-      background: rgba(139, 92, 246, 0.5);
-      border-color: rgba(255, 255, 255, 0.5);
-    }
+.file-input:hover {
+  background: rgba(139, 92, 246, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}
 
-    .status {
-      margin-top: 0.5rem;
-      color: #86efac;
-      font-size: 0.9rem;
-    }
+.status {
+  margin-top: 0.5rem;
+  color: #86efac;
+  font-size: 0.9rem;
+}
 
-    .controls-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      margin-bottom: 2rem;
-    }
+.controls-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
+}
 
-    .controls-card h3 {
-      margin-bottom: 1.5rem;
-      font-size: 1.2rem;
-    }
+.controls-card h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
 
-    .control-group {
-      margin-bottom: 1.5rem;
-    }
+.control-group {
+  margin-bottom: 1.5rem;
+}
 
-    .control-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
+.control-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
 
-    input[type="range"] {
-      width: 100%;
-      height: 8px;
-      border-radius: 5px;
-      background: rgba(255, 255, 255, 0.3);
-      outline: none;
-      cursor: pointer;
-    }
+input[type='range'] {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+  cursor: pointer;
+}
 
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #8b5cf6;
-      cursor: pointer;
-    }
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  cursor: pointer;
+}
 
-    .result-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+.result-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-    .result-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
 
-    .download-btn {
-      padding: 0.75rem 1.5rem;
-      background: #10b981;
-      border: none;
-      border-radius: 0.5rem;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+.download-btn {
+  padding: 0.75rem 1.5rem;
+  background: #10b981;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    .download-btn:hover {
-      background: #059669;
-    }
+.download-btn:hover {
+  background: #059669;
+}
 
-    .canvas-container {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 0.5rem;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center !important;
-      position: relative;
-      overflow: hidden;
-    }
+.canvas-container {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  position: relative;
+  overflow: hidden;
+}
 
-    #canvas {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+#canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-    .placeholder {
-      color: #e9d5ff;
-    }
+.placeholder {
+  color: #e9d5ff;
+  text-align: center;
+}
 
-    .processing {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
+.processing {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
 
-    .features {
-      margin-top: 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+.features {
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-    .features h3 {
-      margin-bottom: 1rem;
-    }
+.features h3 {
+  margin-bottom: 1rem;
+}
 
-    .features ul {
-      list-style: none;
-      color: #e9d5ff;
-    }
+.features ul {
+  list-style: none;
+  color: #e9d5ff;
+}
 
-    .features li {
-      padding: 0.5rem 0;
-      font-size: 0.95rem;
-    }
+.features li {
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* === NEW: CSS Output Styles === */
+.css-output h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #c7d2fe;
+}
+
+.css-code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  white-space: pre;
+  word-wrap: normal;
+  color: #a5b4fc;
+}
