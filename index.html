@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realistic Shadow Generator</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>☀️ Realistic Shadow Generator</h1>
+      <p class="subtitle">Create stunning shadows with directional lighting</p>
+
+      <div class="upload-grid">
+        <div class="upload-card">
+          <h3>🧍 Foreground (with cutout)</h3>
+          <input
+            type="file"
+            id="foregroundInput"
+            class="file-input"
+            accept="image/*"
+          />
+          <div id="fgStatus" class="status" style="display: none">✓ Loaded</div>
+        </div>
+
+        <div class="upload-card">
+          <h3>🏫 Background</h3>
+          <input
+            type="file"
+            id="backgroundInput"
+            class="file-input"
+            accept="image/*"
+          />
+          <div id="bgStatus" class="status" style="display: none">✓ Loaded</div>
+        </div>
+
+        <div class="upload-card">
+          <h3>⭐ Depth Map (optional)</h3>
+          <input
+            type="file"
+            id="depthInput"
+            class="file-input"
+            accept="image/*"
+          />
+          <div id="depthStatus" class="status" style="display: none">
+            ✓ Advanced mode active
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-card">
+        <h3>☀️ Light Controls</h3>
+
+        <div class="control-group">
+          <label for="angleSlider"
+            >Light Angle: <span id="angleValue">45</span>°</label
+          >
+          <input type="range" id="angleSlider" min="0" max="360" value="45" />
+        </div>
+
+        <div class="control-group">
+          <label for="elevationSlider"
+            >Light Elevation: <span id="elevationValue">45</span>°</label
+          >
+          <input
+            type="range"
+            id="elevationSlider"
+            min="0"
+            max="90"
+            value="45"
+          />
+        </div>
+
+        <div class="control-group">
+          <label for="intensitySlider"
+            >Shadow Intensity: <span id="intensityValue">0.70</span></label
+          >
+          <input
+            type="range"
+            id="intensitySlider"
+            min="0"
+            max="1"
+            step="0.05"
+            value="0.7"
+          />
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-header">
+          <h3>Result</h3>
+          <button id="downloadBtn" class="download-btn" style="display: none">
+            Download
+          </button>
+        </div>
+
+        <div class="canvas-container">
+          <canvas id="canvas"></canvas>
+          <div id="placeholder" class="placeholder">
+
+          </div>
+          <div id="processing" class="processing" style="display: none">
+            Processing...
+          </div>
+        </div>
+      </div>  
+
+      <div class="features">
+        <h3>✅ Features Implemented:</h3>
+        <ul>
+          <li>✓ Directional light control (angle 0-360°, elevation 0-90°)</li>
+          <li>✓ Contact shadow (dark and sharp near contact area)</li>
+          <li>
+            ✓ Soft shadow falloff (blur and opacity increase with distance)
+          </li>
+          <li>✓ Shadow matches subject silhouette perfectly</li>
+          <li>⭐ Bonus: Depth map support for realistic surface warping</li>
+        </ul>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
